@@ -44,6 +44,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/common/tsconfig.lib.json"
       }
+    },
+    "shops": {
+      "type": "application",
+      "root": "apps/shops",
+      "entryFile": "main",
+      "sourceRoot": "apps/shops/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/shops/tsconfig.app.json"
+      }
     }
   }
 }
