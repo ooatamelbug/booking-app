@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  booking-db:
+    image: postgres:latest
+    container_name: booking-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - booking-db:/var/lib/postgresql/data
+    networks:
+      - booking-app
+
+  booking-rabbitmq:
+    image: rabbitmq
+    ports:
+      - '5672:5672'
+
+volumes:
+  booking-db:
+    driver: local
+
+networks:
+  booking-app:
+    driver: local
